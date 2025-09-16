@@ -92,9 +92,10 @@
     <integration.tests>com.google.cloud.teleport.metadata.TemplateIntegrationTest</integration.tests>
     <load.tests>com.google.cloud.teleport.metadata.TemplateLoadTest</load.tests>
     <direct-runner.tests>com.google.cloud.teleport.metadata.DirectRunnerTest</direct-runner.tests>
-    <excluded.spanner.tests></excluded.spanner.tests>
+    <excluded.spanner.tests/>
 
     <licenseHeaderFile>JAVA_LICENSE_HEADER</licenseHeaderFile>
+    <org-postgresql.postgresql.version>42.6.1</org-postgresql.postgresql.version>
   </properties>
 
   <dependencyManagement>
@@ -177,6 +178,11 @@
         <groupId>org.xerial.snappy</groupId>
         <artifactId>snappy-java</artifactId>
         <version>${snappy.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.postgresql</groupId>
+        <artifactId>postgresql</artifactId>
+        <version>${org-postgresql.postgresql.version}</version>
       </dependency>
     </dependencies>
   </dependencyManagement>
@@ -387,7 +393,7 @@
               <includes>
                 <include>**/*LT.java</include>
               </includes>
-              <excludedGroups></excludedGroups>
+              <excludedGroups/>
               <groups>
                 ${load.tests}
               </groups>
